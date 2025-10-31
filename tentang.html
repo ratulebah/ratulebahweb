@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | Ratu Lebah Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-black text-gray-100 font-barlow">
+
+    <!-- HEADER NAVIGASI -->
+    <header class="bg-cover bg-center relative shadow-lg" style="background-image: url('download.jpeg');">
+        <div class="bg-black/60 backdrop-blur-sm">
+            <div class="flex justify-between items-center px-6 py-4">
+                <!-- Logo + Nama Perusahaan -->
+                <div class="flex items-center space-x-3">
+                    <!-- Logo tanpa border bulat -->
+                    <img src="/assets/Logo1.png" alt="Logo Ratu Lebah" class="w-12 h-12 object-contain">
+
+                    <div>
+                        <h1 class="text-2xl font-bold text-white tracking-wide">RATU LEBAH</h1>
+                        <p class="text-yellow-300 text-sm tracking-widest">INDONESIA</p>
+                    </div>
+                </div>
+
+
+                <!-- MENU NAVIGASI -->
+                <nav class="hidden md:flex space-x-6 text-white font-semibold">
+                    <a href="index1.html" class="hover:text-yellow-400 transition">Beranda</a>
+                    <a href="tentang.html" class="llow-20text-ye0 border-b-2 border-yellow-400 pb-1">Tentang</a>
+                    <a href="nilai.html" class="hover:text-yellow-400 transition">nilai</a>
+                    <a href="produk.html" class="hover:text-yellow-400 transition">Produk</a>
+                    <a href="cs.html" class="hover:text-yellow-400 transition">Kontak</a>
+                </nav>
+
+                <!-- TOMBOL MENU MOBILE -->
+                <button id="menu-btn" class="md:hidden bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded-lg shadow transition">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU MOBILE (SIDEBAR) -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black/60 z-40"></div>
+    <aside id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-yellow-500 shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex justify-between items-center px-4 py-4 border-b border-yellow-700">
+            <h2 class="text-lg font-bold text-black">Navigasi</h2>
+            <button id="close-btn" class="text-black font-bold text-xl hover:text-red-700">✕</button>
+        </div>
+        <nav class="flex flex-col px-6 py-4 space-y-3 text-black font-semibold">
+            <a href="index1.html" class="hover:text-white transition">🏠 Beranda</a>
+            <a href="tentang.html" class="llow-20text-ye0 border-b-2 border-yellow-200 pb-1">🐝 Tentang Kami</a>
+            <a href="produk.html" class="hover:text-white transition">🍯 Produk</a>
+            <a href="cs.html" class="hover:text-white transition">📞 Kontak</a>
+            <a href="cs.html" class="hover:text-white transition">🤝 nilai</a>
+        </nav>
+        <div class="border-t border-yellow-700 mx-4 mt-4"></div>
+        <div class="px-6 py-4">
+            <h3 class="text-black font-bold mb-3">Ikuti Kami</h3>
+            <div class="flex space-x-4 text-2xl">
+                <a href="https://www.youtube.com/@ratulebahindonesia" target="_blank"><i class="fa-brands fa-youtube text-red-600 hover:scale-110 transition"></i></a>
+                <a href="https://www.tiktok.com/@ratulebahindonesia?_t=ZS-90tT9CuQwkC&_r=1" target="_blank"><i class="fa-brands fa-tiktok text-black hover:scale-110 transition"></i></a>
+                <a href="https://www.instagram.com/ratulebahofficial_?igsh=MTk2aGZ4a2EwM2Vlbg==" target="_blank"><i class="fa-brands fa-instagram text-pink-600 hover:scale-110 transition"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ISI HALAMAN -->
+    <section class="py-16 px-6 md:px-16 bg-gradient-to-b from-black via-zinc-900 to-black">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-yellow-500 mb-4">Tentang Kami</h2>
+            <p class="text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                <span class="text-yellow-400 font-semibold">Ratu Lebah Indonesia</span> adalah brand herbal alami yang berfokus pada pengembangan produk-produk kesehatan berbahan dasar lebah, seperti madu murni, propolis, dan royal jelly. Kami percaya
+                bahwa kekuatan alam dapat membantu manusia mencapai keseimbangan tubuh dan jiwa.
+            </p>
+        </div>
+
+        <!-- FOTO & VISI MISI -->
+        <div class="mt-10 grid md:grid-cols-2 gap-10 items-center">
+            <img src="/assets/tentangpage.jpeg" alt="Lebah madu" class="w-[80%] mx-auto max-h-[300px] object-cover rounded-2xl shadow-lg shadow-yellow-900/40 hover:scale-105 transition duration-500 -mt-4 mb-4">
+            <div>
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Visi Kami</h3>
+                <p class="text-gray-300 mb-6">
+                    Menjadi pelopor produk herbal lebah terbaik di Indonesia dengan mengedepankan kualitas, keaslian, dan manfaat nyata bagi kesehatan masyarakat.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Misi Kami</h3>
+                <ul class="text-gray-300 list-disc list-inside space-y-2">
+                    <li>Mengedukasi masyarakat tentang manfaat produk lebah alami.</li>
+                    <li>Memberdayakan peternak lebah lokal untuk pertumbuhan berkelanjutan.</li>
+                    <li>Menyediakan produk berkualitas tinggi yang aman dan teruji.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- KEUNGGULAN -->
+        <section class="bg-zinc-950 py-16 px-6 md:px-16 text-center">
+            <h2 class="text-3xl font-bold text-yellow-500 mb-8">Mengapa Memilih Kami?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-zinc-900 rounded-2xl shadow-lg hover:bg-yellow-500 hover:text-black transition duration-300">
+                    <i class="fa-solid fa-leaf text-4xl mb-3 text-yellow-400"></i>
+                    <h3 class="text-xl font-bold mb-2">100% Alami</h3>
+                    <p>Semua produk kami berasal dari bahan alami tanpa tambahan bahan kimia.</p>
+                </div>
+
+                <!-- BAGIAN YANG DIUBAH -->
+                <div class="p-6 bg-zinc-900 rounded-2xl shadow-lg hover:bg-yellow-500 hover:text-black transition duration-300">
+                    <i class="fa-solid fa-mosque text-4xl mb-3 text-yellow-400"></i>
+                    <h3 class="text-xl font-bold mb-2">100% Produk Halal</h3>
+                    <p>Bukan sekadar sertifikasi halal, tetapi lebih kepada penegakan syariat islam
+                    </p>
+                </div>
+
+                <div class="p-6 bg-zinc-900 rounded-2xl shadow-lg hover:bg-yellow-500 hover:text-black transition duration-300">
+                    <i class="fa-solid fa-award text-4xl mb-3 text-yellow-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Berkualitas Premium</h3>
+                    <p>Produk kami sudah dipercaya oleh banyak pelanggan di seluruh Indonesia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-black border-t border-yellow-700 py-6 text-center">
+            <p class="text-gray-400 text-sm">© 2025 Ratu Lebah Indonesia. Semua Hak Dilindungi.</p>
+            <div class="mt-3 flex justify-center space-x-4 text-2xl">
+                <a href="https://www.youtube.com/@ratulebahindonesia" target="_blank"><i class="fa-brands fa-youtube text-red-600 hover:scale-110 transition"></i></a>
+                <a href="https://www.tiktok.com/@ratulebahindonesia?_t=ZS-90tT9CuQwkC&_r=1" target="_blank"><i class="fa-brands fa-tiktok text-white hover:scale-110 transition"></i></a>
+                <a href="https://www.instagram.com/ratulebahofficial_?igsh=MTk2aGZ4a2EwM2Vlbg==" target="_blank"><i class="fa-brands fa-instagram text-pink-500 hover:scale-110 transition"></i></a>
+            </div>
+        </footer>
+
+        <!-- SCRIPT SIDEBAR -->
+        <script>
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const closeBtn = document.getElementById('close-btn');
+
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            });
+            closeBtn.addEventListener('click', () => {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            });
+            overlay.addEventListener('click', () => {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            });
+        </script>
+
+</body>
+
+</html>

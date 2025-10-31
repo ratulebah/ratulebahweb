@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak | Ratu Lebah Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="font-barlow bg-cover bg-center min-h-screen flex flex-col" style="background-image: url('/images/lebah-bg.jpg');">
+
+    <!-- Overlay gelap agar teks tetap terbaca -->
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+    <!-- Navbar -->
+    <header class="relative z-10 bg-black/70 text-yellow-400 py-4 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center px-6">
+            <div class="flex items-center space-x-3">
+                <img src="/assets/Logo1.png" alt="Logo Ratu Lebah" class="w-10 h-10 rounded-full object-cover">
+                <h1 class="font-bold text-xl">Ratu Lebah Indonesia</h1>
+            </div>
+            <ul class="flex space-x-6 text-sm md:text-base">
+                <li><a href="index1.html" class="hover:text-white transition">Beranda</a></li>
+                <li><a href="tentang.html" class="hover:text-white transition">Tentang</a></li>
+                <li><a href="nilai.html" class="hover:text-white transition">Nilai</a></li>
+                <li><a href="produk.html" class="hover:text-white transition">Produk</a></li>
+                <li><a href="cs.html" class="llow-20text-ye0 border-b-2 border-yellow-200 pb-1">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="relative z-10 flex-1 flex flex-col justify-center items-center px-6 py-16">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-12 text-center drop-shadow-lg">Hubungi Kami</h2>
+
+        <div class="grid md:grid-cols-2 gap-10 w-full max-w-5xl">
+
+            <!-- Kotak Chat WhatsApp -->
+            <div class="bg-white/10 backdrop-blur-md border border-yellow-500 rounded-2xl p-8 shadow-xl hover:scale-105 hover:bg-yellow-500/10 transition">
+                <div class="flex flex-col items-center space-y-4">
+                    <i class="fab fa-whatsapp text-6xl text-[#25D366] drop-shadow-md"></i>
+                    <h3 class="text-2xl font-bold text-yellow-400">Chat Pembeli</h3>
+                    <p class="text-gray-200 text-center">
+                        Klik tombol di bawah untuk langsung terhubung dengan Customer Service kami via WhatsApp.
+                    </p>
+                    <a href="https://wa.me/6281387009011" target="_blank" class="mt-4 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition">
+                        <i class="fab fa-whatsapp mr-2"></i> Mulai Chat
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kotak Daftar Agen -->
+            <div class="bg-white/10 backdrop-blur-md border border-yellow-500 rounded-2xl p-8 shadow-xl hover:scale-105 hover:bg-yellow-500/10 transition">
+                <div class="flex flex-col items-center space-y-4">
+                    <i class="fa-solid fa-handshake text-6xl text-yellow-400 drop-shadow-md"></i>
+                    <h3 class="text-2xl font-bold text-yellow-400">Daftar Agen</h3>
+                    <p class="text-gray-200 text-center">
+                        Ingin menjadi bagian dari kami? Bergabunglah sebagai agen Ratu Lebah Indonesia dan berkembang bersama!
+                    </p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdmUo_c_Lx_2Ptwq3zlCbu9u20mL8kncmj8CQWNebvZcS-3iQ/viewform?usp=dialog" target="_blank" class="mt-4 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-full shadow-lg transition">
+                        <i class="fa-solid fa-user-plus mr-2"></i> Daftar Sekarang
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-black/70 text-gray-300 py-4 text-center text-sm">
+        © 2025 <span class="text-yellow-400 font-semibold">Ratu Lebah Indonesia</span>. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
