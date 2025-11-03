@@ -7,57 +7,65 @@
     <title>Produk Kami | Ratu Lebah Indonesia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             font-family: 'Barlow', sans-serif;
-            background: linear-gradient(to bottom, #fffbea, #fff);
+            background: linear-gradient(to bottom, #fff8e1, #fff);
             overflow-x: hidden;
         }
-        /* 🐝 Navbar */
+        /* Animasi umum */
         
-        header {
-            background: linear-gradient(to right, #1a1a1a, #000);
-            color: #facc15;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-        
-        header img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            border-radius: 0;
-        }
-        
-        nav a {
-            transition: all 0.3s ease;
-        }
-        
-        nav a:hover {
-            color: #fff;
-        }
-        /* 🍯 Garis madu */
-        
-        .honey-line {
-            width: 120px;
-            height: 5px;
-            background: linear-gradient(to right, #facc15, #fbbf24, #f59e0b);
-            margin: 12px auto;
-            border-radius: 10px;
-            animation: glow 2s infinite alternate;
-        }
-        
-        @keyframes glow {
+        @keyframes fadeInUp {
             from {
-                box-shadow: 0 0 5px #facc15;
+                opacity: 0;
+                transform: translateY(30px);
             }
             to {
-                box-shadow: 0 0 20px #fbbf24;
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        /* 🍯 Kartu produk */
+        
+        @keyframes slideLeftFade {
+            from {
+                opacity: 0;
+                transform: translateX(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes clickZoom {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(255, 200, 0, 0);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(255, 200, 0, 0);
+            }
+        }
+        
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .animate-slide-left {
+            animation: slideLeftFade 0.8s ease forwards;
+        }
+        
+        .animate-click {
+            animation: clickZoom 0.4s ease;
+        }
+        /* Kartu produk */
         
         .product-card {
             border-radius: 18px;
@@ -66,7 +74,7 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 211, 77, 0.4);
             overflow: hidden;
-            position: relative;
+            cursor: pointer;
         }
         
         .product-card:hover {
@@ -78,28 +86,54 @@
             width: 100%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            transition: transform 0.4s ease, filter 0.3s ease;
+            transition: transform 0.4s ease;
         }
         
         .product-card:hover img {
             transform: scale(1.05);
-            filter: brightness(1.08);
         }
-        /* 🍯 Label berat */
+        /* Carousel */
         
-        .weight-label {
-            color: #b45309;
-            font-weight: 600;
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
-        /* 🐝 Footer */
         
-        footer {
-            background: #000;
-            color: #facc15;
-            padding: 2rem;
-            text-align: center;
-            font-weight: 500;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+        .carousel img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            position: absolute;
+            transition: opacity 0.6s ease;
+        }
+        
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background: #facc15;
+            transform: scale(1.2);
+        }
+        /* Overlay blur */
+        
+        .blur-bg {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
@@ -107,125 +141,169 @@
 <body class="text-gray-800">
 
     <!-- 🐝 Navbar -->
-    <header>
-        <div class="container mx-auto flex justify-between items-center p-4">
-            <div class="flex items-center space-x-3">
-                <img src="/assets/Logo1.png" alt="Logo Ratu Lebah">
-                <h1 class="text-lg font-bold text-yellow-400">Ratu Lebah Indonesia</h1>
-            </div>
-            <nav class="space-x-6 text-lg font-semibold">
-                <a href="index1.html">Beranda</a>
-                <a href="tentang.html">Tentang</a>
-                <a href="nilai.html">Nilai</a>
-                <a href="produk.html" class="border-b-2 border-yellow-400 pb-1 text-white">Produk</a>
-                <a href="cs.html">Kontak</a>
-            </nav>
+    <header class="bg-black text-yellow-400 p-4 shadow-lg flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-3">
+            <img src="/ratulebahofficial.com/assets/Logo1.png" alt="Logo Ratu Lebah" class="w-10 h-10">
+            <h1 class="font-bold text-lg">Ratu Lebah Indonesia</h1>
         </div>
+        <nav class="space-x-6 font-semibold">
+            <a href="https://ratulebahofficial.com/index.html">Beranda</a>
+            <a href="https://ratulebahofficial.com/tentang.html">Tentang</a>
+            <a href="https://ratulebahofficial.com/nilai.html">Nilai</a>
+            <a href="https://ratulebahofficial.com/produk.html" class="text-white border-b-2 border-yellow-400 pb-1">Produk</a>
+            <a href="https://ratulebahofficial.com/cs.html">Kontak</a>
+        </nav>
     </header>
 
     <!-- 🍯 Banner -->
-    <section class="bg-yellow-100 text-center py-16">
-        <h2 class="text-4xl font-extrabold text-black mb-2 hover:text-amber-600 transition">
-            🍯 Produk Unggulan Kami
-        </h2>
-        <div class="honey-line"></div>
-        <p class="text-gray-700 max-w-2xl mx-auto">
-            Rasa alami, manfaat sejati — dipersembahkan oleh <strong>Ratu Lebah Indonesia</strong>.
-        </p>
+    <section class="bg-yellow-100 text-center py-12">
+        <h2 class="text-4xl font-extrabold text-black mb-2 animate-fade-up"><i class="fa-solid fa-bottle-droplet text-yellow-500"></i> Produk Unggulan Kami</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto animate-fade-up">Rasa alami, manfaat sejati — dipersembahkan oleh <strong>Ratu Lebah Indonesia</strong>.</p>
     </section>
 
-    <!-- 🍯 Produk Grid 4x2 -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-6">
+    <!-- 🍯 Grid Produk -->
+    <main id="product-list" class="py-16 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-6"></main>
 
-            <!-- 1 -->
-            <div class="product-card p-4">
-                <img src="/assets/jahemerah.jpg" alt=" Jahe Merah Ratu Lebah">
-                <div class="mt-4 text-left">
-                    <h3 class="text-xl font-bold text-black">Jahe Merah Ratu Lebah</h3>
-                    <p class="mt-2 text-gray-700 text-sm leading-relaxed">Perpaduan jahe merah pilihan, madu murni, dan gula aren yang menghadirkan sensasi hangat alami. Minuman herbal ini membantu mengatasi masuk angin, menjaga daya tahan tubuh, dan memberikan energi instan di setiap tegukan.</p>
-                    <div class="mt-3 weight-label">Berat bersih: 10 sachet x 25 gram</div>
-                </div>
-            </div>
-
-            <!-- 2 -->
-            <div class="product-card p-4">
-                <img src="/assets/maduhitam.jpg" alt="Madu Hitam Pahit Plus Herbal">
-                <div class="mt-4 text-left">
-                    <h3 class="text-xl font-bold text-red-700">Madu Hitam Pahit Plus Herbal</h3>
-                    <p class="mt-2 text-gray-700 text-sm leading-relaxed">Terbuat dari madu hutan hitam berkualitas yang dipadukan dengan ekstrak herbal pilihan. Berfungsi untuk meningkatkan stamina, menurunkan kadar gula darah, membantu menjaga fungsi hati, dan memperkuat daya tahan tubuh.</p>
-                    <div class="mt-3 weight-label">Isi: 470 gram</div>
-                </div>
-            </div>
-
-            <!-- 3 -->
-            <div class="product-card p-4">
-                <img src="/assets/etawavanilla.jpg" alt="Susu Etawa Putih – Madu & Vanila">
-                <div class="mt-4 text-left">
-                    <h3 class="text-xl font-bold text-orange-700">Susu Etawa Putih – Madu & Vanila</h3>
-                    <p class="mt-2 text-gray-700 text-sm leading-relaxed">Kombinasi sempurna susu kambing etawa, madu, dan vanila yang lembut di lidah. Tinggi kalsium dan protein alami, membantu menjaga kesehatan tulang, meningkatkan imunitas, serta cocok untuk segala usia.</p>
-                    <div class="mt-3 weight-label">Isi: 10 sachet x 25 gram</div>
-                </div>
-            </div>
-
-            <!-- 4 -->
-            <div class="product-card p-4">
-                <img src="/assets/maduanak.jpg" alt="Ratu Lebah Junior D&A Gol">
-                <div class="mt-4 text-left">
-                    <h3 class="text-xl font-bold text-green-700">Ratu Lebah Junior D&A Gol</h3>
-                    <p class="mt-2 text-gray-700 text-sm leading-relaxed">Minuman madu sehat untuk anak-anak yang diformulasikan dengan vitamin A, B, C, dan D. Membantu meningkatkan nafsu makan, menjaga daya tahan tubuh, serta mendukung tumbuh kembang anak dengan rasa lezat yang disukai si kecil.</p>
-                    <div class="mt-3 weight-label">Isi: 150 gram</div>
-                </div>
-            </div>
-
-            <!-- 5 -->
-            <div class="product-card p-4">
-                <img src="/assets/etawajahe.JPG" alt="Susu Etawa Putih – Madu & Jahe">
-                <div class="mt-4 text-left">
-                    <h3 class="text-xl font-bold text-yellow-700">Susu Etawa Putih – Madu & Jahe</h3>
-                    <p class="mt-2 text-gray-700 text-sm leading-relaxed">Perpaduan susu etawa, jahe alami, dan madu murni yang memberi kehangatan sekaligus nutrisi lengkap. Membantu menjaga imunitas tubuh, melancarkan pernapasan, dan menenangkan tenggorokan.</p>
-                    <div class="mt-3 weight-label">Isi: 10 sachet x 25 gram</div>
-                </div>
-            </div>
-
-            <!-- 6 -->
-            <div class="product-card p-4">
-                <img src="/images/produk6.jpeg" alt="Teh Herbal Madu">
-                <div class="mt-4 text-left">
-                    <h3 class="text-xl font-bold text-red-700">Teh Herbal Madu</h3>
-                    <p class="mt-2 text-gray-700 text-sm leading-relaxed">Teh alami berpadu madu murni untuk relaksasi dan imun tubuh.</p>
-                    <div class="mt-3 weight-label">Isi 20 Teabag</div>
-                </div>
-            </div>
-
-            <!-- 7 -->
-            <div class="product-card p-4">
-                <img src="/images/produk7.jpeg" alt="Madu Royal Kids">
-                <div class="mt-4 text-left">
-                    <h3 class="text-xl font-bold text-amber-700">Madu Royal Kids</h3>
-                    <p class="mt-2 text-gray-700 text-sm leading-relaxed">Untuk tumbuh kembang sehat dan energi anak-anak.</p>
-                    <div class="mt-3 weight-label">300 Gram</div>
-                </div>
-            </div>
-
-            <!-- 8 -->
-            <div class="product-card p-4">
-                <img src="/images/produk8.jpeg" alt="Bee Pollen Natural">
-                <div class="mt-4 text-left">
-                    <h3 class="text-xl font-bold text-lime-700">Bee Pollen Natural</h3>
-                    <p class="mt-2 text-gray-700 text-sm leading-relaxed">Kaya protein dan nutrisi penting untuk stamina dan energi alami.</p>
-                    <div class="mt-3 weight-label">100 Gram</div>
-                </div>
-            </div>
-
-        </div>
+    <!-- 🍯 Detail Produk -->
+    <section id="product-detail" class="hidden fixed inset-0 blur-bg z-50 p-8 overflow-y-auto flex flex-col items-center justify-center">
+        <button id="closeDetail" class="text-gray-800 hover:text-black text-2xl font-bold absolute top-5 right-8 bg-yellow-300 rounded-full w-10 h-10 flex justify-center items-center shadow-lg">✕</button>
+        <div id="detail-content" class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center animate-slide-left"></div>
     </section>
 
     <!-- 🐝 Footer -->
-    <footer>
-        <p>&copy; 2025 <strong>Ratu Lebah Indonesia</strong>. Semua Hak Dilindungi.</p>
+    <footer class="bg-black text-yellow-400 py-6 text-center font-medium mt-10">
+        &copy; 2025 <strong>Ratu Lebah Indonesia</strong>. Semua Hak Dilindungi.
     </footer>
 
+    <script>
+        const products = [{
+            name: "Jahe Merah Ratu Lebah",
+            imgs: ["/ratulebahofficial.com/assets/jahemerah.png", "/assets/jahemerah2.jpg", "/assets/jahemerah3.jpg"],
+            desc: "Perpaduan jahe merah pilihan, madu murni, dan gula aren menghadirkan sensasi hangat alami.",
+            icon: "fa-mug-hot",
+            color: "text-red-800"
+        }, {
+            name: "Madu Hitam Pahit Plus Herbal",
+            imgs: ["/assets/maduhitam.jpg", "/assets/maduhitam2.jpg", "/assets/maduhitam3.jpg"],
+            desc: "Madu hitam hutan dengan ekstrak herbal alami untuk menjaga stamina dan daya tahan tubuh.",
+            icon: "fa-jar",
+            color: "text-yellow-900"
+        }, {
+            name: "Susu Etawa Madu Vanila",
+            imgs: ["/assets/etawavanilla.jpg", "/assets/etawavanilla2.jpg", "/assets/etawavanilla3.jpg"],
+            desc: "Susu kambing etawa murni dipadukan dengan madu dan vanila alami.",
+            icon: "fa-cow",
+            color: "text-orange-800"
+        }, {
+            name: "Madu Anak Ratu Lebah",
+            imgs: ["/assets/maduanak.jpg", "/assets/maduanak2.jpg", "/assets/maduanak3.jpg"],
+            desc: "Diformulasikan khusus untuk anak-anak agar tumbuh sehat dan aktif setiap hari.",
+            icon: "fa-child-reaching",
+            color: "text-yellow-700"
+        }, {
+            name: "Bee Pollen Premium",
+            imgs: ["/assets/beepollen.jpg", "/assets/beepollen2.jpg", "/assets/beepollen3.jpg"],
+            desc: "Suplemen alami kaya nutrisi, mendukung stamina dan metabolisme tubuh.",
+            icon: "fa-leaf",
+            color: "text-green-700"
+        }, {
+            name: "Propolis Ratu Lebah",
+            imgs: ["/assets/propolis.jpg", "/assets/propolis2.jpg", "/assets/propolis3.jpg"],
+            desc: "Ekstrak propolis alami untuk menjaga daya tahan tubuh dari dalam.",
+            icon: "fa-droplet",
+            color: "text-blue-700"
+        }, {
+            name: "Royal Jelly Gold",
+            imgs: ["/assets/royaljelly.jpg", "/assets/royaljelly2.jpg", "/assets/royaljelly3.jpg"],
+            desc: "Suplemen alami dari saripati lebah untuk kecantikan dan vitalitas.",
+            icon: "fa-crown",
+            color: "text-pink-700"
+        }, {
+            name: "Madu Hutan Super",
+            imgs: ["/assets/maduhutan.jpg", "/assets/maduhutan2.jpg", "/assets/maduhutan3.jpg"],
+            desc: "Madu murni dari hutan tropis Indonesia, rasa kuat dan khasiat alami.",
+            icon: "fa-tree",
+            color: "text-amber-800"
+        }];
+
+        const listContainer = document.getElementById("product-list");
+        const detailSection = document.getElementById("product-detail");
+        const detailContent = document.getElementById("detail-content");
+        const closeDetail = document.getElementById("closeDetail");
+
+        // render produk + animasi delay
+        products.forEach((p, i) => {
+            const card = document.createElement("div");
+            card.className = `product-card p-4 opacity-0`;
+            setTimeout(() => {
+                card.classList.add("animate-fade-up");
+                card.style.opacity = 1;
+            }, i * 200);
+
+            card.innerHTML = `
+        <img src="${p.imgs[0]}" alt="${p.name}">
+        <div class="mt-4 text-left">
+          <h3 class="text-xl font-bold ${p.color}"><i class="fa-solid ${p.icon} text-yellow-500 mr-2"></i>${p.name}</h3>
+          <p class="mt-2 text-gray-700 text-sm leading-relaxed">${p.desc}</p>
+        </div>`;
+
+            // animasi klik
+            card.addEventListener("click", () => {
+                card.classList.add("animate-click");
+                setTimeout(() => showDetail(p), 300);
+            });
+
+            listContainer.appendChild(card);
+        });
+
+        function showDetail(p) {
+            detailContent.innerHTML = `
+        <div>
+          <div class="carousel relative">
+            ${p.imgs.map((img, i) => `<img src="${img}" class="carousel-img ${i === 0 ? 'opacity-100' : 'opacity-0'}">`).join('')}
+          </div>
+          <div class="dots mt-4">
+            ${p.imgs.map((_, i) => `<div class="dot ${i === 0 ? 'active' : ''}" data-index="${i}"></div>`).join('')}
+          </div>
+        </div>
+        <div class="animate-slide-left text-left">
+          <h2 class="text-4xl font-extrabold mb-4 ${p.color}"><i class="fa-solid ${p.icon} mr-2"></i>${p.name}</h2>
+          <p class="text-gray-800 bg-yellow-100 p-6 rounded-2xl leading-relaxed shadow-inner mb-3">${p.desc}</p>
+          <div class="flex space-x-4 mt-4">
+            <a href="https://wa.me/6281234567890" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> Hubungi Kami</a>
+            <a href="https://shopee.co.id/ratulebahofficial" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full flex items-center gap-2"><i class="fa-solid fa-store"></i> Marketplace</a>
+          </div>
+        </div>`;
+
+      // carousel
+      const imgs = detailContent.querySelectorAll('.carousel-img');
+      const dots = detailContent.querySelectorAll('.dot');
+      let index = 0;
+
+      function showImg(i) {
+        imgs.forEach((img, j) => img.style.opacity = j === i ? "1" : "0");
+        dots.forEach((dot, j) => dot.classList.toggle("active", j === i));
+      }
+
+      setInterval(() => {
+        index = (index + 1) % imgs.length;
+        showImg(index);
+      }, 2000);
+
+      dots.forEach(dot => dot.addEventListener('click', () => {
+        index = parseInt(dot.dataset.index);
+        showImg(index);
+      }));
+
+      detailSection.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    closeDetail.addEventListener("click", () => {
+      detailSection.classList.add("hidden");
+      document.body.style.overflow = "auto";
+    });
+    </script>
 </body>
 
 </html>
