@@ -5,8 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Tentang Kami | Ratu Lebah Indonesia</title>
-
-    <!-- Tailwind & Font -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -22,23 +20,15 @@
             color: #FFD700;
         }
         
-        .gold-bg {
-            background-color: #FFD700;
-        }
-        
-        .gold-border {
-            border-color: #FFD700;
-        }
-        
         .card-dark {
             background: #111;
             border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
         }
         
         .card-dark:hover {
             border-color: #FFD700;
             transform: translateY(-4px);
-            transition: 0.3s;
         }
         
         @keyframes fadeInUp {
@@ -60,72 +50,98 @@
 
 <body class="bg-black text-gray-200">
 
-    <!-- HEADER -->
-    <header class="relative">
-        <div class="h-60 md:h-80 bg-cover bg-center" style="background-image: url('assets/banerlebah.jpeg');">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
-            <div class="relative z-10 container mx-auto px-6 py-6 flex items-center justify-between">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center gap-3">
-                    <img src="assets/Logo1.png" alt="Logo Ratu Lebah" class="w-12 h-12 object-contain">
-                    <div class="text-white">
-                        <div class="font-bold text-lg md:text-xl">RATU LEBAH</div>
-                        <div class="text-yellow-200 text-xs tracking-widest">INDONESIA</div>
-                    </div>
-                </a>
+    <!-- ===== HEADER ===== -->
+    <header class="relative w-full h-64 bg-cover bg-center flex flex-col justify-center items-center text-center" style="background-image: url('assets/yaps.jpeg');">
+        <!-- Overlay gelap tipis -->
+        <div class="absolute inset-0 bg-black/30"></div>
 
-                <!-- Tombol Menu -->
-                <button id="menu-btn" class="bg-[#FFD700] hover:bg-[#f8e46c] text-black px-4 py-2 rounded-lg shadow font-semibold focus:outline-none">
-          ☰ Menu
-        </button>
-            </div>
-
-            <!-- Judul di Tengah Banner -->
-            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div class="text-center text-white">
-                    <h1 class="text-3xl md:text-5xl font-extrabold drop-shadow-lg gold">Tentang Kami</h1>
-                    <p class="mt-2 text-sm md:text-base text-gray-300">Mengenal lebih dekat Ratu Lebah Indonesia</p>
+        <!-- Logo dan Menu -->
+        <div class="absolute top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-20">
+            <div class="flex items-center space-x-3">
+                <img src="assets/Logo1.png" alt="Logo Ratu Lebah" class="w-10 h-10 object-contain">
+                <div>
+                    <h1 class="text-xl font-bold text-white tracking-wide">RATU LEBAH</h1>
+                    <p class="text-white text-xs tracking-widest">INDONESIA</p>
                 </div>
             </div>
+
+            <!-- Tombol menu kuning seperti halaman nilai -->
+            <button id="menu-btn" class="bg-yellow-400 text-black hover:bg-yellow-500 hover:text-white font-semibold px-4 py-2 rounded-md shadow-lg transition">
+        ☰ Menu
+      </button>
+        </div>
+
+        <!-- Judul Tengah -->
+        <div class="relative z-10 mt-10">
+            <h1 class="text-4xl font-bold text-yellow-400">Tentang Kami</h1>
+            <p class="text-gray-200 mt-2 text-sm">Mengenal lebih dekat Ratu Lebah Indonesia</p>
         </div>
     </header>
 
-    <!-- OVERLAY -->
-    <div id="overlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity"></div>
+    <!-- Overlay -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300"></div>
 
-    <!-- SIDEBAR -->
-    <aside id="sidebar" class="fixed top-0 right-0 h-full w-72 bg-[#FFD700] z-50 transform translate-x-full transition-transform duration-300 shadow-2xl">
-        <div class="flex items-center justify-between px-4 py-4 border-b border-yellow-600">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-yellow-500 shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex justify-between items-center px-4 py-4 border-b border-yellow-700">
             <h2 class="text-lg font-bold text-black">Menu Navigasi</h2>
-            <button id="close-btn" class="text-black text-2xl font-bold hover:text-red-700">✕</button>
+            <button id="close-btn" class="text-black font-bold text-xl hover:text-red-700">✕</button>
         </div>
-
-        <nav class="px-6 py-4 flex flex-col gap-3 text-black font-semibold">
-            <a href="index.html" class="flex items-center gap-3 hover:text-white"><span>🏠</span> Beranda</a>
-            <a href="tentang.html" class="flex items-center gap-3 sidebar-active px-3 py-2 rounded-md mt-2 bg-black text-[#FFD700]"><span>🐝</span>
+        <nav class="flex flex-col px-6 py-4 space-y-3">
+            <a href="index.html" class="text-black hover:text-white font-semibold transition">🏠 Beranda</a>
+            <a href="tentang.html" class="flex items-center gap-3 sidebar-active px-3 py-2 rounded-md mt-2 bg-black text-[#FFD700]">🐝
         Tentang Kami</a>
-            <a href="nilai.html" class="flex items-center gap-3 hover:text-white"><span>🤝</span> Nilai</a>
-            <a href="produk.html" class="flex items-center gap-3 hover:text-white"><span>🍯</span> Produk</a>
-            <a href="cs.html" class="flex items-center gap-3 hover:text-white"><span>📞</span> Kontak</a>
+            <a href="nilai.html" class="text-black hover:text-white font-semibold transition">🤝 Nilai</a>
+            <a href="produk.html" class="text-black hover:text-white font-semibold transition">🍯 Produk</a>
+            <a href="cs.html" class="text-black hover:text-white font-semibold transition">📞 Kontak</a>
 
-            <div class="border-t border-yellow-700 my-3"></div>
+            <div class="border-t border-yellow-600 my-3 mx-4"></div>
 
-            <div class="pt-2">
-                <h3 class="text-black font-bold mb-2">Ikuti Kami</h3>
-                <div class="flex gap-4 text-2xl">
-                    <a href="https://www.youtube.com/@ratulebahindonesia" target="_blank"><i
-              class="fa-brands fa-youtube text-red-600 hover:scale-105 transition"></i></a>
-                    <a href="https://www.tiktok.com/@ratulebahindonesia" target="_blank"><i
-              class="fa-brands fa-tiktok hover:scale-105 transition"></i></a>
-                    <a href="https://www.instagram.com/ratulebahofficial_" target="_blank"><i
-              class="fa-brands fa-instagram text-pink-500 hover:scale-105 transition"></i></a>
+            <div class="px-6 flex flex-col space-y-3">
+                <h3 class="text-black font-bold">Ikuti Kami</h3>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="https://www.youtube.com/@ratulebahindonesia" target="_blank" class="hover:scale-110 transition transform duration-200">
+                        <i class="fa-brands fa-youtube text-[#FF0000]"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@ratulebahindonesia" target="_blank" class="hover:scale-110 transition transform duration-200">
+                        <i class="fa-brands fa-tiktok text-black"></i>
+                    </a>
+                    <a href="https://www.instagram.com/ratulebahofficial_" target="_blank" class="hover:scale-110 transition transform duration-200">
+                        <i class="fa-brands fa-instagram" style="background: linear-gradient(45deg, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5);
+                     -webkit-background-clip: text;
+                     -webkit-text-fill-color: transparent;">
+            </i>
+                    </a>
                 </div>
             </div>
         </nav>
     </aside>
 
-    <!-- MAIN CONTENT -->
-    <main class="container mx-auto px-6 py-12">
+    <!-- Script Sidebar -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('close-btn');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.remove('translate-x-full');
+            overlay.classList.remove('hidden');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        });
+    </script>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container mx-auto px-6 pt-20 pb-16">
         <section class="max-w-4xl mx-auto text-center mb-10 fade-in">
             <h2 class="text-3xl font-bold gold">Siapa Kami</h2>
             <p class="mt-3 text-gray-400">Ratu Lebah Indonesia adalah brand herbal alami yang berfokus pada pengembangan produk kesehatan berbahan dasar lebah seperti madu murni, propolis, dan royal jelly. Kami percaya bahwa kekuatan alam dapat membantu manusia mencapai keseimbangan
@@ -146,59 +162,12 @@
                 </ul>
             </div>
         </div>
-
-        <!-- Mengapa Memilih Kami -->
-        <section class="mb-20">
-            <h3 class="text-3xl gold font-bold text-center mb-8">Mengapa Memilih Kami?</h3>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="card-dark rounded-2xl p-6 text-center fade-in">
-                    <div class="gold text-3xl mb-3"><i class="fa-solid fa-leaf"></i></div>
-                    <h4 class="font-semibold mb-2 text-white">100% Alami</h4>
-                    <p class="text-gray-400">Semua bahan yang kami gunakan berasal dari sumber alami tanpa bahan kimia tambahan.</p>
-                </div>
-
-                <div class="card-dark rounded-2xl p-6 text-center fade-in">
-                    <div class="gold text-3xl mb-3"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                    <h4 class="font-semibold mb-2 text-white">Terpercaya</h4>
-                    <p class="text-gray-400">Dipercaya oleh pelanggan berkat kualitas dan keaslian produk.</p>
-                </div>
-
-                <div class="card-dark rounded-2xl p-6 text-center fade-in">
-                    <div class="gold text-3xl mb-3"><i class="fa-solid fa-certificate"></i></div>
-                    <h4 class="font-semibold mb-2 text-white">Bersertifikat</h4>
-                    <p class="text-gray-400">Produk kami telah melalui proses uji dan sertifikasi resmi.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="bg-black border-t border-[#FFD700]/40 py-8 text-center">
-        <p class="text-gray-400">© 2025 <span class="gold font-semibold">Ratu Lebah Indonesia</span>. Semua Hak Dilindungi.</p>
+        <p class="text-gray-400">© 2025 <span class="gold font-semibold">Ratu Lebah Indonesia</span>. Semua Hak Dilindungi.
+        </p>
     </footer>
-
-    <!-- SCRIPT -->
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
-        const closeBtn = document.getElementById('close-btn');
-
-        function openSidebar() {
-            sidebar.classList.remove('translate-x-full');
-            overlay.classList.remove('hidden');
-        }
-
-        function closeSidebar() {
-            sidebar.classList.add('translate-x-full');
-            overlay.classList.add('hidden');
-        }
-
-        menuBtn.addEventListener('click', openSidebar);
-        closeBtn.addEventListener('click', closeSidebar);
-        overlay.addEventListener('click', closeSidebar);
-    </script>
-
 </body>
 
 </html>
