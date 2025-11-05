@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madu Anak Ratu Lebah | Ratu Lebah Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: linear-gradient(to bottom, #fff8e1, #fff);
+            overflow-x: hidden;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        /* Carousel */
+        
+        .carousel img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            position: absolute;
+            transition: opacity 0.6s ease;
+            border-radius: 20px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #facc15;
+            transform: scale(1.2);
+        }
+        
+        @media (max-width: 768px) {
+            .carousel img {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <!-- 🔙 Tombol Kembali -->
+    <div class="p-6">
+        <a href="/ratulebahofficial.com/produk.html" class="inline-flex items-center gap-2 text-yellow-700 hover:text-yellow-900 font-semibold">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Produk
+        </a>
+    </div>
+
+    <!-- 🍯 Judul Produk -->
+    <section class="text-center py-6 animate-fade-up">
+        <h2 class="text-4xl font-extrabold text-gold-700 mb-2">
+            <i class="fa-solid fa-child-reaching text-yellow-500"></i> Madu Anak Ratu Lebah
+        </h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+            Madu nutrisi tumbuh kembang anak dengan rasa manis alami yang disukai.
+        </p>
+    </section>
+
+    <!-- 🍯 Detail Produk -->
+    <main class="max-w-6xl mx-auto py-8 px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+        <!-- 📸 Carousel -->
+        <div class="relative">
+            <div class="carousel relative overflow-hidden h-[550px] rounded-2xl shadow-lg">
+                <img src="/ratulebahofficial.com/assets/maduanak.jpg" class="opacity-100 w-full h-full object-cover">
+                <img src="/assets/jahemerah2.jpg" class="opacity-0 w-full h-full object-cover">
+                <img src="/assets/jahemerah3.jpg" class="opacity-0 w-full h-full object-cover">
+            </div>
+
+            <div class="flex justify-center mt-4">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <!-- 📜 Deskripsi -->
+        <div class="animate-fade-up">
+            <h2 class="text-3xl font-bold text-red-800 mb-4"> Madu Anak Ratu Lebah</h2>
+
+            <p class="text-gray-700 bg-yellow-50 p-6 rounded-2xl shadow-inner leading-relaxed mb-6">
+                <strong> Madu Anak Ratu Lebah</strong> DB Gold Anak Ratu Lebah diformulasikan khusus untuk anak-anak dengan kandungan madu murni, royal jelly, temulawak, dan pegagan.
+                <br><br> Nutrisi alaminya membantu meningkatkan nafsu makan, mendukung pertumbuhan, dan menjaga daya tahan tubuh anak.
+                <br><br> Rasa manis alaminya disukai anak-anak tanpa tambahan bahan kimia.
+
+                <!-- Judul daftar manfaat -->
+                <h3 class="text-lg font-semibold text-yellow-800 mb-2">Manfaat Utama:</h3>
+
+                <ul class="list-disc ml-5 text-gray-800 mb-6 space-y-1">
+                    <li>Menambah nafsu makan dan energi</li>
+                    <li>Mendukung tumbuh kembang optimal</li>
+                    <li>Menjaga daya tahan tubuh anak</li>
+                    <li>Membantu konsentrasi dan kecerdasan otak </li>
+                </ul>
+
+                <!-- 🕌 Logo Halal & BPOM -->
+                <div class="flex items-center gap-6 my-6">
+                    <img src="/ratulebahofficial.com/assets/halal" alt="Logo Halal" class="h-14">
+                    <img src="/ratulebahofficial.com/assets/bpom.png" alt="Logo BPOM" class="h-14">
+                </div>
+
+                <!-- 🔘 Tombol Aksi -->
+                <div class="flex space-x-4 mt-6">
+                    <a href="https://wa.me/6285710008579" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+                    </a>
+                    <a href="https://tokopedia.link/ypju7HEA2Xb" target="_blank" class="bg-green-800 hover:bg-green-900 text-white px-5 py-2 rounded-full flex items-center gap-2">
+                        <i class="fa-solid fa-cart-shopping"></i> Beli di Tokopedia
+                    </a>
+                </div>
+        </div>
+    </main>
+
+    <!-- 🐝 Footer -->
+    <footer class="bg-black text-yellow-400 py-6 text-center font-medium mt-10">
+        &copy; 2025 <strong>Ratu Lebah Indonesia</strong>. Semua Hak Dilindungi.
+    </footer>
+
+    <script>
+        // 🎠 Carousel otomatis
+        const imgs = document.querySelectorAll('.carousel img');
+        const dots = document.querySelectorAll('.dot');
+        let index = 0;
+
+        function showImg(i) {
+            imgs.forEach((img, j) => img.style.opacity = j === i ? '1' : '0');
+            dots.forEach((dot, j) => dot.classList.toggle('active', j === i));
+        }
+
+        setInterval(() => {
+            index = (index + 1) % imgs.length;
+            showImg(index);
+        }, 2500);
+
+        dots.forEach((dot, i) => dot.addEventListener('click', () => {
+            index = i;
+            showImg(index);
+        }));
+    </script>
+</body>
+
+</html>
