@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Artikel | Ratu Lebah Indonesia</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+         :root {
+            --amber-500: #f59e0b;
+            --amber-600: #d97706;
+            --amber-50: #fffbeb;
+        }
+        
+        body {
+            font-family: "Barlow", sans-serif;
+            background: linear-gradient(to bottom, var(--amber-50), #fff);
+        }
+        
+        .tag-pill {
+            background: #fff6db;
+            color: #92400e;
+            padding: .35rem .8rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: .87rem;
+            display: inline-block;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity .55s ease, transform .55s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .headline-title {
+            text-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+        }
+        
+        .sidebar-active {
+            background-color: #000;
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <!-- HEADER (menu baru) -->
+    <header class="bg-cover bg-center text-black shadow-md relative" style="background-image: url('assets/banerlebah.jpeg');">
+        <div class="bg-black/40 backdrop-blur-sm">
+            <div class="flex justify-between items-center px-6 py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/Logo1.png" alt="Logo Ratu Lebah" class="w-12 h-12 object-contain">
+                    <div>
+                        <h1 class="text-2xl font-bold text-white tracking-wide">RATU LEBAH</h1>
+                        <p class="text-yellow-300 text-sm tracking-widest">INDONESIA</p>
+                    </div>
+                </div>
+                <button id="menu-btn" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded-lg shadow transition">
+                    ☰ Menu
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300"></div>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-yellow-500 shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex justify-between items-center px-4 py-4 border-b border-yellow-700">
+            <h2 class="text-lg font-bold text-black">Menu Navigasi</h2>
+            <button id="close-btn" class="text-black font-bold text-xl hover:text-red-700">✕</button>
+        </div>
+        <nav class="flex flex-col px-6 py-4 space-y-3">
+            <a href="index.html" class="flex items-center gap-3 sidebar-active px-3 py-2 rounded-md mt-2">🏠 Beranda</a>
+            <a href="tentang.html" class="text-black hover:text-white font-semibold transition">🐝 Tentang Kami</a>
+            <a href="nilai.html" class="text-black hover:text-white font-semibold transition">🤝 Nilai</a>
+            <a href="produk.html" class="text-black hover:text-white font-semibold transition">🍯 Produk</a>
+            <a href="artikel.html" class="text-black hover:text-white font-semibold transition">📰 Artikel</a>
+            <a href="cs.html" class="text-black hover:text-white font-semibold transition">📞 Kontak</a>
+
+            <div class="border-t border-yellow-600 my-3 mx-4"></div>
+            <div class="px-6 flex flex-col space-y-3">
+                <h3 class="text-black font-bold">Ikuti Kami</h3>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="https://www.youtube.com/@ratulebahindonesia" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@ratulebahindonesia?_t=ZS-90tT9CuQwkC&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/ratulebahofficial_?igsh=MTk2aGZ4a2EwM2Vlbg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-6xl mx-auto px-4 md:px-8 py-8">
+
+        <!-- Headline -->
+        <section class="relative mb-8">
+            <img src="assets/head.png" alt="Headline" class="w-full h-[420px] md:h-[480px] object-cover rounded-2xl shadow-lg">
+            <div class="absolute bottom-6 left-6 bg-black/60 text-white p-5 rounded-xl max-w-2xl">
+                <div class="flex gap-2 mb-2">
+                    <a class="tag-pill" href="https://www.google.com/search?q=kesehatan" target="_blank">#Kesehatan</a>
+                    <a class="tag-pill" href="https://www.google.com/search?q=herbal" target="_blank">#Herbal</a>
+                </div>
+                <h1 class="headline-title text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight">Madu &amp; Herbal: Rahasia Sehat dari Alam Indonesia</h1>
+                <p class="mt-2 text-sm text-gray-200">5 November 2025 • Tim Ratu Lebah</p>
+            </div>
+        </section>
+        <!-- Grid articles -->
+        <section class="grid md:grid-cols-3 gap-8">
+            <!-- Left / utama: Artikel 11–15 -->
+            <div class="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                <h2 class="text-xl font-bold text-amber-700 mb-4">Artikel Lanjutan</h2>
+                <div class="space-y-5">
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel11.html" class="text-lg font-semibold text-amber-800 hover:underline">11. Khasiat Madu Hitam untuk Stamina</a>
+                        <p class="text-sm text-gray-700 mt-1">Sumber energi alami, kaya antioksidan, dan mineral penting</p>
+                    </article>
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel12.html" class="text-lg font-semibold text-amber-800 hover:underline">12. Propolis & Sistem Imun</a>
+                        <p class="text-sm text-gray-700 mt-1">Pelindung alami tubuh dari infeksi dan virus</p>
+                    </article>
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel13.html" class="text-lg font-semibold text-amber-800 hover:underline">13. Ramuan Herbal untuk Kesehatan Liver</a>
+                        <p class="text-sm text-gray-700 mt-1">Temulawak, kunyit, dan pegagan untuk liver sehat & detoks alami</p>
+                    </article>
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel14.html" class="text-lg font-semibold text-amber-800 hover:underline">14. Teh Herbal Anti Stress dan Cemas</a>
+                        <p class="text-sm text-gray-700 mt-1">Chamomile, melati, dan lavender untuk pikiran tenang & tidur berkualitas</p>
+                    </article>
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel15.html" class="text-lg font-semibold text-amber-800 hover:underline">15. Herbal Tradisional untuk Kesehatan Jantung</a>
+                        <p class="text-sm text-gray-700 mt-1">Daun sirsak, bawang putih, dan madu untuk jantung sehat & kuat</p>
+
+                    </article>
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel16.html" class="text-lg font-semibold text-amber-800 hover:underline">16. Herbal Penambah Energi Alami Tanpa Kafein</a>
+                        <p class="text-sm text-gray-700 mt-1">Rahasia stamina alami tanpa efek gelisah seperti kopi.</p>
+                    </article>
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel17.html" class="text-lg font-semibold text-amber-800 hover:underline">17. Herbal untuk Kecantikan & Kesehatan Kulit</a>
+                        <p class="text-sm text-gray-700 mt-1">Rahasia kulit cerah dan sehat dengan bahan alami Nusantara</p>
+                    </article>
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel18.html" class="text-lg font-semibold text-amber-800 hover:underline">18. Herbal untuk Menjaga Kesehatan Jantung & Sirkulasi Darah</a>
+                        <p class="text-sm text-gray-700 mt-1">Rasakan kekuatan alami rempah Nusantara untuk jantung yang kuat</p>
+                    </article>
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel19.html" class="text-lg font-semibold text-amber-800 hover:underline">19. Ramuan Herbal untuk Tekanan Darah Tinggi (Hipertensi)</a>
+                        <p class="text-sm text-gray-700 mt-1">Solusi alami turunkan hipertensi dengan herbal pilihan</p>
+                    </article>
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel20.html" class="text-lg font-semibold text-amber-800 hover:underline">20. Herbal Alami untuk Menjaga Daya Tahan Tubuh dan Imunitas</a>
+                        <p class="text-sm text-gray-700 mt-1">Jaga daya tahan tubuh dengan kekuatan herbal nusantara</p>
+
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-6 flex items-center justify-center gap-3">
+                    <a href="artikel.html" class="px-3 py-1 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600">Prev</a>
+                    <a href="artikel.html" class="px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300">1</a>
+                    <a href="artikel2.html" class="px-3 py-1 rounded-md bg-amber-500 text-white font-semibold">2</a>
+                    <a href="artikel-page3.html" class="px-3 py-1 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600">Next</a>
+                </div>
+            </div>
+            <!-- Sidebar Profesional -->
+            <aside class="space-y-6">
+                <!-- Artikel Populer -->
+                <div class="p-4 border rounded-2xl shadow-sm bg-white">
+                    <h3 class="font-bold text-amber-700 mb-3">Artikel Populer</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="artikel/artikel1.html" class="flex items-center gap-2 hover:underline">
+                                <img src="assets/sejarahmadu.jpg" class="w-12 h-12 object-cover rounded" alt="Sejarah Madu">
+                                <span class="text-gray-800 text-sm font-medium">Sejarah Madu Nusantara</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="artikel/artikel2.html" class="flex items-center gap-2 hover:underline">
+                                <img src="assets/maduhitam.jpg" class="w-12 h-12 object-cover rounded" alt="Madu Hitam">
+                                <span class="text-gray-800 text-sm font-medium">Khasiat Madu Hitam</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="artikel/artikel3.html" class="flex items-center gap-2 hover:underline">
+                                <img src="assets/jahemerah.jpg" class="w-12 h-12 object-cover rounded" alt="Jahe Merah">
+                                <span class="text-gray-800 text-sm font-medium">Kombinasi Madu & Jahe Merah</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Produk Rekomendasi -->
+                <div class="p-4 border rounded-2xl shadow-sm bg-white">
+                    <h3 class="font-bold text-amber-700 mb-3">Produk Rekomendasi</h3>
+                    <ul class="space-y-3">
+                        <li class="flex flex-col items-center">
+                            <img src="assets/maduhitam.jpg" class="w-24 h-24 object-cover rounded" alt="Madu Hitam">
+                            <span class="text-gray-800 font-semibold mt-1 text-sm">Madu Hitam Pahit</span>
+                            <a href="produk/maduhitam.html" class="text-amber-600 text-xs mt-1 hover:underline">Lihat Produk</a>
+                        </li>
+                        <li class="flex flex-col items-center">
+                            <img src="assets/jahemerah.jpg" class="w-24 h-24 object-cover rounded" alt="Jahe Merah">
+                            <span class="text-gray-800 font-semibold mt-1 text-sm">Jahe Merah Premium</span>
+                            <a href="produk/jahemerah.html" class="text-amber-600 text-xs mt-1 hover:underline">Lihat Produk</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Widget Kategori Populer -->
+                <div class="p-4 border rounded-2xl shadow-sm bg-white">
+                    <h3 class="font-bold text-amber-700 mb-3">Kategori Populer</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="artikel.html#kesehatan" class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-semibold hover:bg-amber-100">Kesehatan</a>
+                        <a href="artikel.html#herbal" class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-semibold hover:bg-amber-100">Herbal</a>
+                        <a href="artikel.html#madu" class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-semibold hover:bg-amber-100">Madu</a>
+                        <a href="artikel.html#produk" class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-semibold hover:bg-amber-100">Produk</a>
+                    </div>
+                    <a href="artikel.html" class="mt-3 inline-block text-amber-600 text-sm font-semibold hover:underline">Lihat Semua Kategori →</a>
+                </div>
+            </aside>
+
+
+
+        </section>
+
+
+    </main>
+
+    <footer class="bg-amber-600 text-white py-6 mt-8">
+        <div class="max-w-6xl mx-auto text-center text-sm">© 2025 Ratu Lebah Indonesia — Alam untuk Kesehatan.</div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // menu toggle (baru)
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('close-btn');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.remove('translate-x-full');
+            overlay.classList.remove('hidden');
+        });
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        });
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        });
+
+        // efek fade-in
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    io.unobserve(e.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+    </script>
+</body>
+
+</html>

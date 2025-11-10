@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Artikel | Ratu Lebah Indonesia</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+         :root {
+            --amber-500: #f59e0b;
+            --amber-600: #d97706;
+            --amber-50: #fffbeb;
+        }
+        
+        body {
+            font-family: "Barlow", sans-serif;
+            background: linear-gradient(to bottom, var(--amber-50), #fff);
+        }
+        
+        .tag-pill {
+            background: #fff6db;
+            color: #92400e;
+            padding: .35rem .8rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: .87rem;
+            display: inline-block;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity .55s ease, transform .55s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .headline-title {
+            text-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+        }
+        
+        .sidebar-active {
+            background-color: #000;
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <!-- HEADER (menu baru) -->
+    <header class="bg-cover bg-center text-black shadow-md relative" style="background-image: url('assets/banerlebah.jpeg');">
+        <div class="bg-black/40 backdrop-blur-sm">
+            <div class="flex justify-between items-center px-6 py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/Logo1.png" alt="Logo Ratu Lebah" class="w-12 h-12 object-contain">
+                    <div>
+                        <h1 class="text-2xl font-bold text-white tracking-wide">RATU LEBAH</h1>
+                        <p class="text-yellow-300 text-sm tracking-widest">INDONESIA</p>
+                    </div>
+                </div>
+                <button id="menu-btn" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded-lg shadow transition">
+                    ☰ Menu
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300"></div>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-yellow-500 shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex justify-between items-center px-4 py-4 border-b border-yellow-700">
+            <h2 class="text-lg font-bold text-black">Menu Navigasi</h2>
+            <button id="close-btn" class="text-black font-bold text-xl hover:text-red-700">✕</button>
+        </div>
+        <nav class="flex flex-col px-6 py-4 space-y-3">
+            <a href="index.html" class="flex items-center gap-3 sidebar-active px-3 py-2 rounded-md mt-2">🏠 Beranda</a>
+            <a href="tentang.html" class="text-black hover:text-white font-semibold transition">🐝 Tentang Kami</a>
+            <a href="nilai.html" class="text-black hover:text-white font-semibold transition">🤝 Nilai</a>
+            <a href="produk.html" class="text-black hover:text-white font-semibold transition">🍯 Produk</a>
+            <a href="artikel.html" class="text-black hover:text-white font-semibold transition">📰 Artikel</a>
+            <a href="cs.html" class="text-black hover:text-white font-semibold transition">📞 Kontak</a>
+
+            <div class="border-t border-yellow-600 my-3 mx-4"></div>
+            <div class="px-6 flex flex-col space-y-3">
+                <h3 class="text-black font-bold">Ikuti Kami</h3>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="https://www.youtube.com/@ratulebahindonesia" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@ratulebahindonesia?_t=ZS-90tT9CuQwkC&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/ratulebahofficial_?igsh=MTk2aGZ4a2EwM2Vlbg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-6xl mx-auto px-4 md:px-8 py-8">
+
+        <!-- Headline -->
+        <section class="relative mb-8">
+            <img src="assets/head.png" alt="Headline" class="w-full h-[420px] md:h-[480px] object-cover rounded-2xl shadow-lg">
+            <div class="absolute bottom-6 left-6 bg-black/60 text-white p-5 rounded-xl max-w-2xl">
+                <div class="flex gap-2 mb-2">
+                    <a class="tag-pill" href="https://www.google.com/search?q=kesehatan" target="_blank">#Kesehatan</a>
+                    <a class="tag-pill" href="https://www.google.com/search?q=herbal" target="_blank">#Herbal</a>
+                </div>
+                <h1 class="headline-title text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight">Madu &amp; Herbal: Rahasia Sehat dari Alam Indonesia</h1>
+                <p class="mt-2 text-sm text-gray-200">5 November 2025 • Tim Ratu Lebah</p>
+            </div>
+        </section>
+
+        <!-- Grid: left stacked text, right two image cards -->
+        <section class="grid md:grid-cols-3 gap-8">
+            <!-- Left: stacked articles -->
+            <div class="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                <h2 class="text-xl font-bold text-amber-700 mb-4">Artikel Pilihan Hari Ini</h2>
+
+                <div class="space-y-5">
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel1.html" class="text-lg font-semibold text-amber-800 hover:underline">1. Khasiat Propolis untuk Imunitas Tubuh</a>
+                        <p class="text-sm text-gray-700 mt-1">Propolis mengandung senyawa antibakteri dan antioksidan yang membantu memperkuat daya tahan tubuh.</p>
+                    </article>
+
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel2.html" class="text-lg font-semibold text-amber-800 hover:underline">2. Rahasia Herbal Tradisional Jawa</a>
+                        <p class="text-sm text-gray-700 mt-1">Ramuan turun-temurun yang masih efektif menjaga imun dan kebugaran tubuh di era modern.</p>
+                    </article>
+
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel3.html" class="text-lg font-semibold text-amber-800 hover:underline">3. Mengapa Madu Hutan Lebih Bernutrisi?</a>
+                        <p class="text-sm text-gray-700 mt-1">Lingkungan lebah & jenis bunga memengaruhi komposisi nutrisi madu hutan alami.</p>
+                    </article>
+
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel4.html" class="text-lg font-semibold text-amber-800 hover:underline">4. Jahe Merah dan Khasiatnya</a>
+                        <p class="text-sm text-gray-700 mt-1">Jahe merah kaya gingerol yang membantu melancarkan sirkulasi darah dan mengurangi nyeri otot.</p>
+                    </article>
+
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel5.html" class="text-lg font-semibold text-amber-800 hover:underline">5. Tips Memilih Produk Herbal Aman</a>
+                        <p class="text-sm text-gray-700 mt-1">Pastikan produk memiliki izin BPOM, label jelas, dan bahan alami terpercaya.</p>
+                    </article>
+
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel6.html" class="text-lg font-semibold text-amber-800 hover:underline">6. Madu, Propolis & Royal Jelly</a>
+                        <p class="text-sm text-gray-700 mt-1">Ketiganya adalah hasil lebah dengan manfaat berbeda untuk imunitas, energi, dan kecantikan.</p>
+                    </article>
+
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel7.html" class="text-lg font-semibold text-amber-800 hover:underline">7. Herbal Nusantara: Kekuatan Alami Indonesia</a>
+                        <p class="text-sm text-gray-700 mt-1">Tanaman obat asli Indonesia telah terbukti berkhasiat untuk menjaga daya tahan dan vitalitas.</p>
+                    </article>
+
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel8.html" class="text-lg font-semibold text-amber-800 hover:underline">8. Propolis dalam Dunia Medis Modern</a>
+                        <p class="text-sm text-gray-700 mt-1">Propolis kini banyak digunakan dalam penelitian medis untuk antibakteri dan antivirus alami.</p>
+                    </article>
+
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel9.html" class="text-lg font-semibold text-amber-800 hover:underline">9. Royal Jelly: Rahasia Vitalitas dan Kecantikan</a>
+                        <p class="text-sm text-gray-700 mt-1">Royal Jelly mengandung protein, vitamin B kompleks, dan hormon alami untuk menjaga energi.</p>
+                    </article>
+
+                    <article class="fade-in p-3 rounded-md hover:bg-amber-50 transition">
+                        <a href="artikel/artikel10.html" class="text-lg font-semibold text-amber-800 hover:underline">10. Kombinasi Herbal dan Madu untuk Detoks Tubuh</a>
+                        <p class="text-sm text-gray-700 mt-1">Campuran madu dengan herbal tertentu membantu mengeluarkan racun tubuh secara alami.</p>
+                    </article>
+                </div>
+
+
+                <!-- Tags -->
+                <div class="mt-6 border-t pt-4">
+                    <h3 class="font-semibold mb-3">Topik Populer</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- clickable tags (open google search) -->
+                        <a class="tag-pill" href="https://www.google.com/search?q=madu" target="_blank">#Madu</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=propolis" target="_blank">#Propolis</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=herbal+alami" target="_blank">#HerbalAlami</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=jahe+merah" target="_blank">#JaheMerah</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=royal+jelly" target="_blank">#RoyalJelly</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=susu+etawa" target="_blank">#SusuEtawa</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=kesehatan" target="_blank">#Kesehatan</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=imunitas" target="_blank">#Imunitas</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=detoks" target="_blank">#Detoks</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=energi+alami" target="_blank">#EnergiAlami</a>
+                        <a class="tag-pill" href="https://www.google.com/search?q=vitamin+alami" target="_blank">#VitaminAlami</a>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-6 flex items-center justify-center gap-3">
+                    <a href="artikel.html" class="px-3 py-1 rounded-md bg-amber-500 text-white font-semibold">1</a>
+                    <a href="artikel2.html" class="px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300">2</a>
+                    <a href="artikel2.html" class="px-3 py-1 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600">Next</a>
+                </div>
+            </div>
+
+            <!-- Right: image cards -->
+            <div class="space-y-6">
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition fade-in">
+                    <img src="assets/sejarahmadu.jpg" alt="Sejarah Madu" class="w-full h-44 object-cover">
+                    <div class="p-4">
+                        <a href="artikel/artikelgambar1.html" class="font-bold text-amber-700 hover:underline">Sejarah Madu</a>
+                        <p class="text-sm text-gray-600 mt-1">Menelusuri perjalanan madu dari zaman kuno hingga modern</p>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition fade-in">
+                    <img src="assets/madubagus2.jpg" alt="Manfaat Propolis" class="w-full h-44 object-cover">
+                    <div class="p-4">
+                        <a href="artikel/artikelgambar2.html" class="font-bold text-amber-700 hover:underline">Fakta Madu: Keajaiban Alami dari Lebah</a>
+                        <p class="text-sm text-gray-600 mt-1">Menjelajahi fakta menarik tentang madu, nutrisi, dan manfaat kesehatannya</p>
+                    </div>
+                </article>
+                <!-- Artikel Populer -->
+                <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm fade-in">
+                    <h3 class="text-lg font-bold text-amber-700 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-fire text-amber-600"></i> Artikel Populer
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="artikel/artikel3.html" class="text-amber-800 hover:underline">Mengapa Madu Hutan Lebih Bernutrisi?</a></li>
+                        <li><a href="artikel/artikel9.html" class="text-amber-800 hover:underline">Royal Jelly: Rahasia Vitalitas & Kecantikan</a></li>
+                        <li><a href="artikel/artikel6.html" class="text-amber-800 hover:underline">Madu, Propolis & Royal Jelly</a></li>
+                        <li><a href="artikel/artikel4.html" class="text-amber-800 hover:underline">Jahe Merah dan Khasiatnya</a></li>
+                    </ul>
+                </div>
+
+                <!-- Produk Rekomendasi -->
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl p-5 border border-amber-200 shadow-sm fade-in">
+                    <h3 class="text-lg font-bold text-amber-700 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-gift text-amber-600"></i> Produk Rekomendasi
+                    </h3>
+                    <div class="flex items-center gap-3 mb-3">
+                        <img src="assets/etawavanilla.jpg" alt="Susu Etawa Vanilla Ratu Lebah" class="w-16 h-16 rounded-lg object-cover border">
+                        <div>
+                            <p class="font-semibold text-amber-900">Susu Etawa Vanilla Ratu Lebah</p>
+                            <a href="produk/etawavanilla.html" class="text-sm text-amber-700 hover:underline">Lihat Detail →</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img src="assets/jahemerah.jpg" alt="Propolis Alami" class="w-16 h-16 rounded-lg object-cover border">
+                        <div>
+                            <p class="font-semibold text-amber-900">Jahe Merah Ratu Lebah</p>
+                            <a href="produk/jahemerah.html" class="text-sm text-amber-700 hover:underline">Lihat Detail →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Tambahan di bawah dua kolom artikel -->
+        <section class="max-w-6xl mx-auto px-4 md:px-8 mt-14 mb-10">
+            <!-- Artikel Terkait -->
+            <div class="mb-10">
+                <h2 class="text-2xl font-extrabold text-amber-700 mb-6 border-b-4 border-amber-400 inline-block pb-1">
+                    Artikel Terkait
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition fade-in border border-gray-200">
+                        <img src="assets/gatau.jpg" alt="Ramuan Herbal" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <a href="artikel/artikelterkait1.html" class="font-bold text-amber-700 hover:underline block mb-1">
+            Khasiat Madu untuk Kesehatan
+          </a>
+                            <p class="text-sm text-gray-600"> Cairan emas dari alam yang menyimpan sejuta manfaat</p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition fade-in border border-gray-200">
+                        <img src="assets/sirihmadu.jpg" alt="Manfaat Madu Hitam" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <a href="artikel/artikelterkait2.html" class="font-bold text-amber-700 hover:underline block mb-1">
+          Kekuatan Alam Daun Sirih & Madu
+          </a>
+                            <p class="text-sm text-gray-600">Manfaat herbal dari kombinasi sirih dan madu</p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition fade-in border border-gray-200">
+                        <img src="assets/maduhitam.jpg" alt="Teh Herbal" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <a href="artikel/artikelterkait3.html" class="font-bold text-amber-700 hover:underline block mb-1">
+            Manfaat Utama Madu Hitam
+          </a>
+                            <p class="text-sm text-gray-600">Kaya antioksidan untuk kesehatan optimal</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+
+        </section>
+
+
+    </main>
+    <!-- Bagian Daftar Keagenan -->
+    <section class="max-w-6xl mx-auto px-4 md:px-8 mt-14 mb-10">
+        <div class="bg-gradient-to-r from-amber-400 to-yellow-300 rounded-2xl p-8 md:flex items-center justify-between shadow-md fade-in relative overflow-hidden">
+
+            <!-- Ilustrasi di sisi kanan -->
+            <div class="absolute right-0 bottom-0 opacity-20 md:opacity-30 pointer-events-none">
+                <img src="assets/Logo1.png" alt="Kerja Sama Lebah" class="w-72 md:w-96">
+            </div>
+
+            <!-- Konten Teks -->
+            <div class="max-w-xl relative z-10 mb-6 md:mb-0">
+                <h3 class="text-3xl font-extrabold text-amber-900 mb-3 drop-shadow-sm">
+                    Bergabung Jadi Mitra & Agen Ratu Lebah Indonesia!
+                </h3>
+                <p class="text-amber-800 text-sm mb-5">
+                    Nikmati keuntungan eksklusif sebagai agen resmi kami — mulai dari harga khusus reseller, pelatihan produk, hingga dukungan promosi penuh dari tim kami.
+                </p>
+
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://wa.me/6281234567890?text=Halo%20Ratu%20Lebah%20Indonesia,%20saya%20ingin%20menjadi%20agen." class="bg-amber-700 hover:bg-amber-800 text-white px-5 py-2 rounded-lg font-semibold shadow-md transition">
+          Daftar Sekarang
+        </a>
+                    <a href="tentang.html" class="border border-amber-700 text-amber-900 px-5 py-2 rounded-lg font-semibold hover:bg-amber-200 transition">
+          Pelajari Lebih Lanjut
+        </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-amber-600 text-white py-6 mt-8">
+        <div class="max-w-6xl mx-auto text-center text-sm">© 2025 Ratu Lebah Indonesia — Alam untuk Kesehatan.</div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // menu toggle (baru)
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('close-btn');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.remove('translate-x-full');
+            overlay.classList.remove('hidden');
+        });
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        });
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        });
+
+        // efek fade-in
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    io.unobserve(e.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+    </script>
+</body>
+
+</html>
