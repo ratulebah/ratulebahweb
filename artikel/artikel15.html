@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Herbal Tradisional untuk Kesehatan Jantung | Ratu Lebah Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: "Barlow", sans-serif;
+            background: linear-gradient(to bottom, #111827, #1f2937);
+            color: #FFD700;
+        }
+        
+        .tag-pill {
+            background: #1f2937;
+            color: #FFD700;
+            padding: .35rem .8rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: .87rem;
+            display: inline-block;
+            border: 1px solid #FFD700;
+        }
+        
+        .tag-pill:hover {
+            background: #FFD700;
+            color: #1f2937;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity .55s ease, transform .55s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="bg-cover bg-center text-black shadow-md relative" style="background-image: url('../assets/banerlebah.jpeg');">
+        <div class="bg-black/50 backdrop-blur-sm">
+            <div class="flex justify-between items-center px-6 py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="../assets/Logo1.png" alt="Logo Ratu Lebah" class="w-12 h-12 object-contain">
+                    <div>
+                        <h1 class="text-2xl font-bold text-white tracking-wide">RATU LEBAH</h1>
+                        <p class="text-yellow-300 text-sm tracking-widest">INDONESIA</p>
+                    </div>
+                </div>
+                <button id="menu-btn" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded-lg shadow transition">☰ Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="overlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300"></div>
+    <aside id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-yellow-500 shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex justify-between items-center px-4 py-4 border-b border-yellow-700">
+            <h2 class="text-lg font-bold text-black">Menu Navigasi</h2>
+            <button id="close-btn" class="text-black font-bold text-xl hover:text-red-700">✕</button>
+        </div>
+        <nav class="flex flex-col px-6 py-4 space-y-3">
+            <a href="../index.html" class="text-black hover:text-white font-semibold transition">🏠 Beranda</a>
+            <a href="../tentang.html" class="text-black hover:text-white font-semibold transition">🐝 Tentang Kami</a>
+            <a href="../nilai.html" class="text-black hover:text-white font-semibold transition">🤝 Nilai</a>
+            <a href="../produk.html" class="text-black hover:text-white font-semibold transition">🍯 Produk</a>
+            <a href="../artikel.html" class="flex items-center gap-3 sidebar-active px-3 py-2 rounded-md mt-2 bg-black text-[#FFD700]">📰 Artikel</a>
+            <a href="../kontak.html" class="text-black hover:text-white font-semibold transition">📞 Kontak</a>
+            <div class="border-t border-yellow-600 my-3 mx-4"></div>
+            <div class="px-6 flex flex-col space-y-3">
+                <h3 class="text-black font-bold">Ikuti Kami</h3>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="https://www.youtube.com/@ratulebahindonesia" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@ratulebahindonesia" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/ratulebahofficial_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <section class="relative bg-cover bg-center h-80 flex items-center justify-center" style="background-image: url('../assets/herbal-jantung-banner.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-gray-900/70"></div>
+        <div class="relative text-center text-white z-10 px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold drop-shadow-lg">Herbal Tradisional untuk Kesehatan Jantung</h1>
+            <p class="text-lg mt-3 text-yellow-300">Daun sirsak, bawang putih, dan madu untuk jantung sehat & kuat</p>
+        </div>
+    </section>
+
+    <main class="max-w-4xl mx-auto px-4 py-10">
+        <article class="bg-gray-900 p-6 rounded-2xl shadow-md border border-gray-700 space-y-5 fade-in">
+            <p>Kesehatan jantung adalah kunci hidup panjang dan berkualitas. Beberapa tanaman herbal seperti bawang putih, daun sirsak, dan madu dipercaya mampu menjaga elastisitas pembuluh darah, menurunkan kolesterol, serta melancarkan sirkulasi darah
+                secara alami.</p>
+
+            <h2 class="text-xl font-bold text-yellow-300">1. Bawang Putih Penurun Kolesterol</h2>
+            <p>Senyawa allicin dalam bawang putih membantu menurunkan kolesterol jahat dan menstabilkan tekanan darah.</p>
+
+            <h2 class="text-xl font-bold text-yellow-300">2. Daun Sirsak: Antioksidan untuk Jantung</h2>
+            <p>Daun sirsak kaya fitonutrien dan antioksidan yang melindungi pembuluh darah dari kerusakan akibat radikal bebas.</p>
+
+            <h2 class="text-xl font-bold text-yellow-300">3. Madu: Penyeimbang Alami</h2>
+            <p>Madu membantu meningkatkan energi jantung, menjaga kadar gula darah stabil, dan memperbaiki sirkulasi oksigen.</p>
+
+            <blockquote class="border-l-4 border-yellow-300 pl-4 italic text-gray-300 bg-gray-800 py-2 px-3 rounded-md">
+                “Herbal alami bantu jantung berdetak kuat tanpa efek samping.”
+            </blockquote>
+
+            <div class="border-t border-gray-700 pt-4 mt-6">
+                <h3 class="font-semibold mb-2 text-yellow-300">Tag Terkait:</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="https://www.google.com/search?q=herbal+jantung" class="tag-pill" target="_blank">#HerbalJantung</a>
+                    <a href="https://www.google.com/search?q=kesehatan+jantung" class="tag-pill" target="_blank">#KesehatanJantung</a>
+                    <a href="https://www.google.com/search?q=daun+sirsak" class="tag-pill" target="_blank">#DaunSirsak</a>
+                    <a href="https://www.google.com/search?q=bawang+putih" class="tag-pill" target="_blank">#BawangPutih</a>
+                    <a href="https://www.google.com/search?q=madu+alami" class="tag-pill" target="_blank">#MaduAlami</a>
+                    <a href="https://www.google.com/search?q=kolesterol" class="tag-pill" target="_blank">#Kolesterol</a>
+                    <a href="https://www.google.com/search?q=tekanan+darah" class="tag-pill" target="_blank">#TekananDarah</a>
+                    <a href="https://www.google.com/search?q=obat+alami+jantung" class="tag-pill" target="_blank">#ObatAlamiJantung</a>
+                    <a href="https://www.google.com/search?q=herbal+penurun+kolesterol" class="tag-pill" target="_blank">#HerbalPenurunKolesterol</a>
+                    <a href="https://www.google.com/search?q=antioksidan" class="tag-pill" target="_blank">#Antioksidan</a>
+                    <a href="https://www.google.com/search?q=pembuluh+darah" class="tag-pill" target="_blank">#PembuluhDarah</a>
+                    <a href="https://www.google.com/search?q=sirkulasi+darah" class="tag-pill" target="_blank">#SirkulasiDarah</a>
+                    <a href="https://www.google.com/search?q=herbal+nusantara" class="tag-pill" target="_blank">#HerbalNusantara</a>
+                    <a href="https://www.google.com/search?q=kesehatan+alami" class="tag-pill" target="_blank">#KesehatanAlami</a>
+                    <a href="https://www.google.com/search?q=obat+herbal+tradisional" class="tag-pill" target="_blank">#ObatHerbalTradisional</a>
+                    <a href="https://www.google.com/search?q=detoks+darah" class="tag-pill" target="_blank">#DetoksDarah</a>
+                    <a href="https://www.google.com/search?q=penyakit+jantung" class="tag-pill" target="_blank">#PenyakitJantung</a>
+                    <a href="https://www.google.com/search?q=menurunkan+kolesterol" class="tag-pill" target="_blank">#MenurunkanKolesterol</a>
+                    <a href="https://www.google.com/search?q=heart+health" class="tag-pill" target="_blank">#HeartHealth</a>
+                    <a href="https://www.google.com/search?q=natural+cardio+support" class="tag-pill" target="_blank">#NaturalCardioSupport</a>
+                    <a href="https://www.google.com/search?q=healthy+heart" class="tag-pill" target="_blank">#HealthyHeart</a>
+                    <a href="https://www.google.com/search?q=herbal+for+heart" class="tag-pill" target="_blank">#HerbalForHeart</a>
+                    <a href="https://www.google.com/search?q=cholesterol+control" class="tag-pill" target="_blank">#CholesterolControl</a>
+                    <a href="https://www.google.com/search?q=natural+detox" class="tag-pill" target="_blank">#NaturalDetox</a>
+                    <a href="https://www.google.com/search?q=cardiovascular+health" class="tag-pill" target="_blank">#CardiovascularHealth</a>
+                    <a href="https://www.google.com/search?q=herbal+energy" class="tag-pill" target="_blank">#HerbalEnergy</a>
+                    <a href="https://www.google.com/search?q=hidup+sehat" class="tag-pill" target="_blank">#HidupSehat</a>
+                    <a href="https://www.google.com/search?q=gaya+hidup+sehat" class="tag-pill" target="_blank">#GayaHidupSehat</a>
+                    <a href="https://www.google.com/search?q=detak+jantung" class="tag-pill" target="_blank">#DetakJantung</a>
+                    <a href="https://www.google.com/search?q=penyumbatan+pembuluh" class="tag-pill" target="_blank">#PenyumbatanPembuluh</a>
+                    <a href="https://www.google.com/search?q=maduhitam" class="tag-pill" target="_blank">#MaduHitam</a>
+                    <a href="https://www.google.com/search?q=herbal+alami" class="tag-pill" target="_blank">#HerbalAlami</a>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="../artikel2.html" class="inline-block px-6 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-xl font-semibold shadow transition"><i class="fa-solid fa-arrow-left mr-2"></i>Kembali ke Artikel</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-black text-yellow-400 py-6 mt-10">
+        <div class="max-w-6xl mx-auto text-center text-sm">© 2025 Ratu Lebah Indonesia — Warisan Alam Nusantara.</div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('close-btn');
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.remove('translate-x-full');
+            overlay.classList.remove('hidden');
+        });
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        });
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        });
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    io.unobserve(e.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+    </script>
+</body>
+
+</html>
